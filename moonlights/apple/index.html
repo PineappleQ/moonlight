@@ -1,0 +1,115 @@
+<html>
+
+<head>
+    <title>You are the apple of my eye</title>
+    <link rel="icon" href="assets/images/apple.png" type="image/x-icon">
+    <meta charset="utf-8">
+    <style>
+        heml,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        
+        canvas {
+            background-color: #0ed6e0;
+        }
+        
+        #container {
+            width: 1280px;
+            height: 768px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+        
+        #ballParent {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            transform-style: preserve-3d;
+            transform: rotateX(-30deg);
+            animation: rotateBall 3s linear infinite;
+        }
+        
+        .ball {
+            width: 100%;
+            height: 100%;
+            border-radius: 50px;
+            position: absolute;
+            text-align: center;
+            line-height: 100px;
+            font-size: larger;
+            font-family: cursive;
+            opacity: 0.7;
+        }
+        
+        #ball_1 {
+            background-color: #aaaaaa;
+        }
+        
+        #ball_2 {
+            background-color: #aaaaaa;
+            transform: rotateY(60deg);
+            opacity: 0.3;
+        }
+        
+        #ball_3 {
+            background-color: #aaaaaa;
+            transform: rotateY(120deg);
+            opacity: 0.3;
+        }
+        
+        .fadeout {
+            animation: fadeout 0.5s;
+            animation-fill-mode: forwards;
+        }
+        
+        #input {
+            position: absolute;
+            border: none;
+            background: transparent;
+            border-bottom: 1px solid #f38630;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #f38630;
+            text-align: center;
+            font-family: cursive;
+            font-size: 20px;
+            max-width: 200px;
+        }
+        
+        #input:focus {
+            outline: none;
+        }
+        
+        @keyframes rotateBall {
+            0% {
+                transform: rotateY(0deg);
+            }
+            50% {
+                transform: rotateY(180deg);
+            }
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="ballParent">
+            <div class="ball" id="ball_1">
+                <img width="100%" height="100%" src="assets/images/apple.png" alt="">
+            </div>
+        </div>
+        <input type="text" id="input">
+    </div>
+</body>
+<script src="animationjs/sketch.js"></script>
+<script src="animationjs/animation.js"></script>
+
+</html>
